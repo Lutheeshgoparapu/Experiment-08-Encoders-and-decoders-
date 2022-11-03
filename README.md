@@ -55,23 +55,72 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step 1:
+Open Quartus II and select new project and choose the file location.
+
+Step 2:
+Module Declaration. Module should have the file name.
+
+Step 3:
+Input-Output Delecaration.
+
+Step 4:
+Use assign to define the functionality of logic circuits.
+
+Step 5:
+At the end give endmodule.
+
+Step 6:
+Run the program and choose RTL viewer to get RTL realization.
+
 
 
 
 ### PROGRAM 
-/*
-Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+### Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+```
+Developed by:Goparapu Lutheesh 
+RegisterNumber:  212221230029
+```
+## ENCODER
+```
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+### DECODER
+```
+module decode(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a & ~b & ~c) ;
+assign d1=(~a & ~b &c);
+assign d2=(~a & b &~c);
+assign d3=(~a & b &c);
+assign d4=(a &~b&~c);
+assign d5=(a &~b&c);
+assign d6=(a&b&~c);
+assign d7=(a&b&c);
+endmodule
+```
 
 
 
 
 
+### RTL LOGIC  OF ENCODER
 
-### RTL LOGIC  
+![image](https://user-images.githubusercontent.com/94154531/199717711-00c0d370-cb35-48dc-9e27-168286a07ecf.png)
+
+### RTL LOGIC OF DECODER
+
+![DECODER](https://user-images.githubusercontent.com/94154531/199717797-4b317fb9-4fe5-4d6f-b7c0-a45983283f91.jpg)
+
 
 
 
@@ -81,16 +130,30 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+## ENCODER TIMING DIAGRAM
+![199716745-48126309-d23f-4edd-8535-60cae10a83b4](https://user-images.githubusercontent.com/94154531/199720381-4ae0807b-bffe-4cd7-a49f-334d22242b26.png)
+
+
+## DECODER TIMING DIAGRAM
+
+![171607869-f619ec2c-6923-4e96-8e18-f806cb34908f](https://user-images.githubusercontent.com/94154531/199719790-bef1ce26-8ce2-4958-b14f-9009c04b66b3.png)
 
 
 
 
 
 ### TRUTH TABLE 
+### TRUTH TABLE FOR ENCODER
+
+![171607642-250e8f6e-a47e-4173-95f0-666d85ef39c2](https://user-images.githubusercontent.com/94154531/199718891-c24f1364-ba8a-4068-90f8-f141932c3cca.png)
+
+### TRUTH TABLE FOR DECODER
+
+![171607596-216c457f-4d75-464f-8872-ec2cb3326e5d](https://user-images.githubusercontent.com/94154531/199719052-4f5e886b-33d3-4376-aca8-78c157eddedc.png)
 
 
 
 
 
-
-### RESULTS 
+### RESULTS
+Thus the program to desing encoder and decoder is done Sucessfully
